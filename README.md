@@ -1,5 +1,7 @@
 # KisanMadad
 
+![Architecture Diagram](Picture1.png)
+
 **Team ID**: A0237  
 **Team Name**: VIT-US
 
