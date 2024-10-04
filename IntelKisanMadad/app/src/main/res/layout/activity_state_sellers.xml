@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".StateSellersActivity">
+
+    <!-- Horizontal LinearLayout for app name banner and state image -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/stateImage"
+            app:civ_border_width="2dp"
+            android:layout_marginRight="10dp"
+            app:civ_circle_background_color="@color/white"
+            app:civ_border_color="#A08067"/>
+
+        <!-- App Name Banner -->
+        <TextView
+            android:id="@+id/stateBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- RecyclerView for displaying sellers -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_sellers"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#F5F5F5"/>
+
+</LinearLayout>

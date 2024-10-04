@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <!-- Horizontal LinearLayout for state image and seller name -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/stateImage"
+            app:civ_border_width="2dp"
+            android:src="@drawable/farmericon"
+            android:layout_marginRight="10dp"
+            app:civ_circle_background_color="@color/white"
+            app:civ_border_color="#A08067"/>
+
+        <TextView
+            android:id="@+id/sellerNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:text="Seller: " />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/listingBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="Crops Listing from the seller " />
+
+    <!-- RecyclerView for listing commodities -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_crops"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/seller_image"
+            app:civ_border_width="2dp"
+            android:layout_marginRight="10dp"
+            app:civ_circle_background_color="@color/white"
+            app:civ_border_color="#A08067"/>
+
+        <TextView
+            android:id="@+id/seller_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:text="Seller Name"
+            android:layout_weight="1" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarketplaceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- App Name Banner -->
+        <TextView
+            android:id="@+id/EnterValueBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Values"
+            android:fontFamily="@font/lexend"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="#000" />
+
+        <!-- State Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="State">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- District Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:hint="District">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDistrict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Commodity Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Commodity">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCommodity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Search Button -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_margin="16dp" />
+
+        <!-- App Name Banner -->
+        <TextView
+            android:id="@+id/RealTimeCropValueBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crop Data"
+            android:fontFamily="@font/lexend"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="#000" />
+
+        <!-- NestedListView -->
+        <com.vitus.intelkisanmadad.NestedListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:background="@drawable/whitebackground"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- App Name Banner -->
+        <TextView
+            android:id="@+id/graphBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Graphical Analysis"
+            android:fontFamily="@font/lexend"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="#000" />
+
+        <!-- LineChart for Min, Max, Modal Prices -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp" />
+
+        <!-- Set Price Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/NegotiatePriceBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set your price!"
+                android:fontFamily="@font/lexend"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/tvCropName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crop Name:"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/tvCropMeanValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crop Mean Value:"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Set your asking price"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAskingPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSavePrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

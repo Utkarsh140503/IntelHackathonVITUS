@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/district"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="District"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Market"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/commodity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Commodity"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/variety"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Variety"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grade"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/arrivalDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arrival Date"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/minPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min Price"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/maxPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Price"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/modalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modal Price"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/commodityCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Commodity Code"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

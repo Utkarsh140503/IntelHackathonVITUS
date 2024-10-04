@@ -1,0 +1,8 @@
+<!-- res/drawable/u_shape_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:topLeftRadius="0dp"
+        android:topRightRadius="0dp"
+        android:bottomLeftRadius="110dp"
+        android:bottomRightRadius="110dp"/>
+    <solid android:color="#FCF9C1"/>
+</shape>

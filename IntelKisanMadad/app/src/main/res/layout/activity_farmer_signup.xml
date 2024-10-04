@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#F5F5F5"
+    tools:context=".FarmerSignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Existing UI elements here -->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/farmericon"
+                android:layout_marginTop="40dp"
+                app:civ_border_width="2dp"
+                android:layout_marginBottom="40dp"
+                app:civ_circle_background_color="@color/white"
+                app:civ_border_color="#A08067"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start your farming journey"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:textColor="#A18167"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your favorite option to create an account and save your progress."
+                android:textSize="14sp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I already have an account"
+                android:textSize="14sp"
+                android:textColor="#a18167"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dont have an account? Register below."
+                android:textSize="14sp"
+                android:textColor="#a18167"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <!-- Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Email -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Phone -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="10"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Location -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Location"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Preferred Language -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Preferred Language"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLanguage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Plot Size -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Plot Size (in acres)"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlotSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:padding="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Signup Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Signup"
+                        android:layout_marginTop="20dp"
+                        android:padding="12dp"
+                        app:cornerRadius="8dp"
+                        android:backgroundTint="#5E35F2"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:text="By creating an account, you agree with our Terms of Service and Privacy Policy."
+                android:textSize="12sp"
+                android:textColor="#000000"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

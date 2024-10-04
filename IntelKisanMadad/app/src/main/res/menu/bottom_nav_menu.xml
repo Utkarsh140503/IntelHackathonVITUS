@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_marketplace"
+        android:icon="@drawable/shopicon"
+        android:title="Marketplace" />
+
+    <item
+        android:id="@+id/nav_irrigation"
+        android:icon="@drawable/irrigationicon"
+        android:title="Irrigation" />
+
+    <item
+        android:id="@+id/nav_nutrition"
+        android:icon="@drawable/nutrition"
+        android:title="Nutrition" />
+
+    <item
+        android:id="@+id/nav_health"
+        android:icon="@drawable/cropicon"
+        android:title="Crop Health" />
+
+    <item
+        android:id="@+id/nav_education"
+        android:icon="@drawable/bookicon"
+        android:title="Education" />
+
+</menu>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EducationResourcesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- English YouTube and Blog Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/youtube_section_title_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="English YouTube Videos"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreYtVideos_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="View More" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/youtubeRecyclerView_english"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/blog_section_title_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English Blogs"
+                android:textSize="20sp"
+                android:fontFamily="@font/lexend"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreBlogs_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="View More" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blogRecyclerView_english"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <!-- Hindi YouTube and Blog Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/youtube_section_title_hindi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="हिंदी यूट्यूब वीडियो"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreYtVideos_hindi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="और देखें" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/youtubeRecyclerView_hindi"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/blog_section_title_hindi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="हिंदी ब्लॉग"
+                android:textSize="20sp"
+                android:fontFamily="@font/lexend"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreBlogs_hindi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="और देखें" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blogRecyclerView_hindi"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/youtube_section_title_tamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="தமிழ் YouTube வீடியோக்கள்"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreYtVideos_tamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/lexend"
+                android:text="மேலும் காண்க" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/youtubeRecyclerView_tamil"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/blog_section_title_tamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="தமிழ் வலைப்பதிவுகள்"
+                android:textSize="20sp"
+                android:fontFamily="@font/lexend"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreBlogs_tamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="மேலும் காண்க" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blogRecyclerView_tamil"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/youtube_section_title_telugu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="తెలుగు యూట్యూబ్ వీడియోలు"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreYtVideos_telugu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="మరింత వీక్షించండి" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/youtubeRecyclerView_telugu"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/blog_section_title_telugu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="తెలుగు బ్లాగులు"
+                android:textSize="20sp"
+                android:fontFamily="@font/lexend"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/viewMoreBlogs_telugu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="మరింత వీక్షించండి" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blogRecyclerView_telugu"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/webinarsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Webinars and Tours"                 android:textSize="20sp"
+                android:fontFamily="@font/lexend"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp" />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/webinarRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+</ScrollView>
