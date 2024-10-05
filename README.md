@@ -1,6 +1,6 @@
 # KisanMadad
 
-![Architecture Diagram](Picture1.png)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](./app.apk)
 
 **Team ID**: A0237  
 **Team Name**: VIT-US
@@ -79,8 +79,25 @@ KisanMadad integrates Intel's AI and oneAPI toolkits to create a seamless, high-
 
 ---
 
+## Machine Learning Models
+
+### 1. Fertilizer Prediction Model
+The Fertilizer Prediction model employs a Random Forest classifier with a random state set to 42, achieving an impressive accuracy of 97.8%. The model was trained on a dataset comprising 99 records and utilizes the following features: Temperature, Humidity, Moisture, Soil Type, Crop Type, Nitrogen, Potassium, and Phosphorous, to predict the appropriate fertilizer. The target variable, 'Fertilizer Name,' consists of seven unique fertilizers: Urea, DAP, 14-35-14, 28-28, 17-17-17, 20-20, and 10-26-26. This robust model aids in precise fertilizer recommendations for improved crop yield.
+
+### 2. Crop Recommendation System
+The Crop Recommendation System is powered by a Convolutional Neural Network (CNN) model with four layers. The architecture includes an input layer that processes seven key agricultural features (N, P, K, temperature, humidity, pH, and rainfall), followed by a hidden layer with 128 neurons using ReLU activation, a second hidden layer with 64 neurons and ReLU activation, and an output layer with softmax activation for classification. The model is trained on a dataset of 2200 records with crops such as rice, maize, chickpea, kidney beans, pigeon peas, and more. After 10 epochs of training, the model achieves an accuracy of 94.09%, providing reliable crop recommendations.
+
+### 3. Smart Irrigation System
+The Smart Irrigation System utilizes a RandomForestRegressor with 100 estimators, a minimum samples leaf of 4, and a minimum samples split of 10. Trained on a dataset containing 2880 records, it leverages features such as Crop Type, Soil Type, Region, Temperature, Weather Condition, and Water Requirement to predict optimal irrigation needs. The model achieved a Mean Absolute Error (MAE) of 1.4169, providing precise irrigation recommendations to help optimize water usage in agriculture.
+
+### 4. Soil Health Prediction Model
+The Soil Health Prediction model is a Convolutional Neural Network (CNN) with four layers. It starts with an input layer shaped to the dataset's features, followed by two dense layers with 64 and 32 neurons respectively, both using ReLU activation. The output layer employs a sigmoid activation function for binary classification. Trained for 1000 epochs on a dataset containing 2200 records with features such as N, P, K, temperature, humidity, pH, and rainfall, the model achieves a maximum accuracy of 75.11%, providing insights into soil health.
+
+### 5. Crop Disease Prediction Model
+The Crop Disease Prediction model is a CNN with 30 layers, consisting of convolutional layers (Conv2D), batch normalization (BatchNorm2D), ReLU activation, and max-pooling layers (MaxPool2D), culminating in a flatten layer and a fully connected (linear) layer. This deep model is trained on a dataset of 5000 images, classifying crop diseases across various categories such as 'Corn (maize) – Common Rust', 'Potato – Early Blight', 'Potato – Late Blight', 'Tomato – Bacterial Spot', 'Tomato – Late Blight', as well as healthy versions of these crops.
+
+---
+
 ## Contact
 
 For any queries or contributions, feel free to reach out to our team.
-
----
