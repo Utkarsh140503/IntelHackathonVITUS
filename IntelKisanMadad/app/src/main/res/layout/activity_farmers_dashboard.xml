@@ -1,342 +1,347 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CBE49B"
     android:orientation="vertical"
+    android:background="#CBE49B"
     tools:context=".FarmersDashboardActivity">
 
-    <!-- Horizontal LinearLayout for app name banner and bell icon -->
-    <LinearLayout
+    <!-- ScrollView for scrollable content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/farmericon"
-            app:civ_border_width="2dp"
-            android:layout_marginRight="10dp"
-            app:civ_circle_background_color="@color/white"
-            app:civ_border_color="#A08067"/>
-
-        <!-- App Name Banner -->
-        <TextView
-            android:id="@+id/app_name_banner"
-            android:layout_width="wrap_content"
+        <!-- Main vertical layout inside ScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="KisanMadad"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
+            android:orientation="vertical">
 
-        <!-- Bell Icon -->
-        <ImageView
-            android:id="@+id/bell_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/notificationicon"
-            android:contentDescription="Bell Icon" />
-
-        <ImageView
-            android:id="@+id/bard_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/bardicon"
-            android:layout_marginLeft="20dp"
-            android:contentDescription="Bell Icon" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <!-- App Name Banner -->
-        <TextView
-            android:id="@+id/marketplaceBanner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Marketplace Access"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
-
-        <!-- Bell Icon -->
-        <LinearLayout
-            android:id="@+id/marketPlaceLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/whitebackground"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/shopIcon"
-                android:layout_width="wrap_content"
+            <!-- Horizontal LinearLayout for app name banner and bell icon -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/shopicon" />
-            <TextView
-                android:id="@+id/marketPlaceButton"
-                android:text="Marketplace"
-                android:fontFamily="@font/lexend"
-                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/farmericon"
+                    app:civ_border_width="2dp"
+                    android:layout_marginRight="10dp"
+                    app:civ_circle_background_color="@color/white"
+                    app:civ_border_color="#A08067"/>
+
+                <!-- App Name Banner -->
+                <TextView
+                    android:id="@+id/app_name_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KisanMadad"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <!-- Bell Icon -->
+                <ImageView
+                    android:id="@+id/bell_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/notificationicon"
+                    android:contentDescription="Bell Icon" />
+
+                <ImageView
+                    android:id="@+id/bard_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/bardicon"
+                    android:layout_marginLeft="20dp"
+                    android:contentDescription="Bard Icon" />
+            </LinearLayout>
+
+            <!-- Marketplace Access Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Marketplace Banner -->
+                <TextView
+                    android:id="@+id/marketplaceBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Marketplace Access"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <!-- Marketplace Button -->
+                <LinearLayout
+                    android:id="@+id/marketPlaceLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/whitebackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/shopIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/shopicon" />
+                    <TextView
+                        android:id="@+id/marketPlaceButton"
+                        android:text="Marketplace"
+                        android:fontFamily="@font/lexend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Smart Irrigation Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/irrigationBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Smart Irrigation"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/smartIrrigationLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/whitebackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/irrigationIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/irrigationicon" />
+                    <TextView
+                        android:id="@+id/irrigationButton"
+                        android:text="Irrigation Settings"
+                        android:fontFamily="@font/lexend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Smart Nutrition Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/nutritionBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Smart Nutrition"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/smartNutritionLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/whitebackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/nutritionIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/nutrition" />
+                    <TextView
+                        android:id="@+id/nutritionButton"
+                        android:text="Nutrition Settings"
+                        android:fontFamily="@font/lexend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Crop Recommendation Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/cropRecommendBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Crop Recommendation"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/smartCropRecommender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/whitebackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/cropRecommendIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/nutrition" />
+                    <TextView
+                        android:id="@+id/cropRecommenderButton"
+                        android:text="Get Recommendation"
+                        android:fontFamily="@font/lexend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Crop Health Monitoring Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/cropHealthLayout"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/cropHealthBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Crop Health Monitoring"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/smartCropHealthLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/whitebackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/cropHealthIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/cropicon" />
+                    <TextView
+                        android:id="@+id/cropHealthButton"
+                        android:text="Monitor Health"
+                        android:fontFamily="@font/lexend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Educational Resources Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Educational Resources Banner -->
+                <TextView
+                    android:id="@+id/educationBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Educational Resources"
+                    android:fontFamily="@font/lexend"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_weight="1" />
+
+                <!-- Educational Resources Layout -->
+                <LinearLayout
+                    android:id="@+id/educationResourcesLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/whitebackground"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/educationIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/bookicon" />
+                    <TextView
+                        android:id="@+id/educationButton"
+                        android:text="Access Resources"
+                        android:fontFamily="@font/lexend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- App Name Banner -->
-        <TextView
-            android:id="@+id/irrigationBanner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Smart Irrigation"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
-
-        <!-- Bell Icon -->
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:id="@+id/smartIrrigationLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/whitebackground"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/irrigationIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/irrigationicon" />
-            <TextView
-                android:id="@+id/irrigationButton"
-                android:text="Irrigation Settings"
-                android:fontFamily="@font/lexend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- App Name Banner -->
-        <TextView
-            android:id="@+id/nutritionBanner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Smart Nutrition"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
-
-        <!-- Bell Icon -->
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:id="@+id/smartNutritionLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/whitebackground"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/nutritionIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/nutrition" />
-            <TextView
-                android:id="@+id/nutritionButton"
-                android:text="Nutrition Settings"
-                android:fontFamily="@font/lexend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- App Name Banner -->
-        <TextView
-            android:id="@+id/cropRecommendBanner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Crop Recommendation"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
-
-        <!-- Bell Icon -->
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:id="@+id/smartCropRecommender"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/whitebackground"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/cropRecommendIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/nutrition" />
-            <TextView
-                android:id="@+id/cropRecommenderButton"
-                android:text="Get Recommendation"
-                android:fontFamily="@font/lexend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- App Name Banner -->
-        <TextView
-            android:id="@+id/cropHealthBanner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Crop Health Monitoring"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
-
-        <!-- Bell Icon -->
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/cropHealthLayout"
-            android:background="@drawable/whitebackground"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/cropHealthIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/cropicon" />
-            <TextView
-                android:id="@+id/cropHealthButton"
-                android:text="View Dashboard"
-                android:fontFamily="@font/lexend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
-
-        <!-- App Name Banner -->
-        <TextView
-            android:drawableLeft="@drawable/bookicon"
-            android:drawablePadding="10dp"
-            android:id="@+id/educationalResourcesBanner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Educational Resources"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:layout_weight="1" />
-
-        <!-- Bell Icon -->
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/educationResourcesLayout"
-            android:layout_height="match_parent"
-            android:background="@drawable/whitebackground"
-            android:padding="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/arrowicon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/arrowicon" />
-            <TextView
-                android:id="@+id/learnMoreButton"
-                android:text="Learn More"
-                android:fontFamily="@font/lexend"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
