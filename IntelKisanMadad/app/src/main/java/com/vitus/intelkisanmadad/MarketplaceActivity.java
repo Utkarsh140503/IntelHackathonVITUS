@@ -4,9 +4,13 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,17 +33,22 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MarketplaceActivity extends AppCompatActivity {
 
-    private EditText etState, etDistrict, etCommodity, etAskingPrice;
+    private Spinner spinnerState, spinnerDistrict;
     private Button btnSearch, btnSavePrice;
-    private ListView listView;
     private LineChart lineChart;
     private TextView tvCropName, tvCropMeanValue;
     private String selectedCommodity;
+    EditText selectedC;
     private float meanPrice;
+
+    // State and District Data
+    private Map<String, List<String>> statesAndDistricts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,34 +56,99 @@ public class MarketplaceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_marketplace);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor("#FFFFFF"));
+            getWindow().setStatusBarColor(Color.parseColor("#ECEF8F"));
         }
 
-
-        etState = findViewById(R.id.etState);
-        etDistrict = findViewById(R.id.etDistrict);
-        etCommodity = findViewById(R.id.etCommodity);
-        etAskingPrice = findViewById(R.id.etAskingPrice);
+        // Initialize views
+        spinnerState = findViewById(R.id.spinnerState);
+        spinnerDistrict = findViewById(R.id.spinnerDistrict);
         btnSearch = findViewById(R.id.btnSearch);
         btnSavePrice = findViewById(R.id.btnSavePrice);
-        listView = findViewById(R.id.listView);
         lineChart = findViewById(R.id.lineChart);
         tvCropName = findViewById(R.id.tvCropName);
         tvCropMeanValue = findViewById(R.id.tvCropMeanValue);
 
+        // Load states and districts
+        loadStatesAndDistricts();
+
+        // Search button listener
         btnSearch.setOnClickListener(v -> {
-            String state = etState.getText().toString().trim();
-            String district = etDistrict.getText().toString().trim();
-            selectedCommodity = etCommodity.getText().toString().trim();
+            String state = (String) spinnerState.getSelectedItem();
+            String district = (String) spinnerDistrict.getSelectedItem();
+            selectedC = findViewById(R.id.etCommodity);
+            selectedCommodity = selectedC.getText().toString().trim();
 
             new FetchDataTask().execute(state, district, selectedCommodity);
         });
 
+        // Save button listener
         btnSavePrice.setOnClickListener(v -> savePrice());
     }
 
-    private class FetchDataTask extends AsyncTask<String, Void, List<Item>> {
+    private void loadStatesAndDistricts() {
+        // Hardcoded data for states and districts
+        statesAndDistricts = new HashMap<>();
 
+        statesAndDistricts.put("Andhra Pradesh", List.of("Ananthapur", "Chittoor", "Guntur", "Visakhapatnam", "Krishna", "Kurnool", "Nellore", "Srikakulam", "West Godavari", "East Godavari"));
+        statesAndDistricts.put("Arunachal Pradesh", List.of("Itanagar", "Papum Pare", "Tawang", "West Siang", "Lower Subansiri", "Upper Subansiri", "East Siang"));
+        statesAndDistricts.put("Assam", List.of("Guwahati", "Dibrugarh", "Jorhat", "Tinsukia", "Nagaon", "Karimganj", "Cachar", "Sonitpur", "Kamrup", "Baksa"));
+        statesAndDistricts.put("Bihar", List.of("Patna", "Gaya", "Bhagalpur", "Munger", "Nalanda", "Vaishali", "Saran", "Darbhanga", "Purnia", "Sitamarhi"));
+        statesAndDistricts.put("Chhattisgarh", List.of("Raipur", "Bilaspur", "Durg", "Korba", "Rajnandgaon", "Dantewada", "Kanker", "Surguja", "Jashpur", "Narayanpur"));
+        statesAndDistricts.put("Goa", List.of("Panaji", "Margao", "Mapusa", "Ponda", "Sanguem"));
+        statesAndDistricts.put("Gujarat", List.of("Ahmedabad", "Surat", "Vadodara", "Rajkot", "Gandhinagar", "Bhavnagar", "Jamnagar", "Junagadh", "Kutch", "Dahod"));
+        statesAndDistricts.put("Haryana", List.of("Gurugram", "Faridabad", "Panchkula", "Ambala", "Hisar", "Karnal", "Rohtak", "Sonipat", "Yamunanagar", "Fatehabad"));
+        statesAndDistricts.put("Himachal Pradesh", List.of("Shimla", "Manali", "Dharamshala", "Kullu", "Mandi", "Solan", "Bilaspur", "Hamirpur", "Una", "Chamba"));
+        statesAndDistricts.put("Jharkhand", List.of("Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Deoghar", "Dumka", "Giridih", "Palamu", "Hazaribagh", "Chatra"));
+        statesAndDistricts.put("Karnataka", List.of("Bangalore", "Mysore", "Mangalore", "Hubli", "Dharwad", "Bellary", "Belgaum", "Tumkur", "Chitradurga", "Kodagu"));
+        statesAndDistricts.put("Kerala", List.of("Thiruvananthapuram", "Kochi", "Kollam", "Kozhikode", "Malappuram", "Thrissur", "Pathanamthitta", "Idukki", "Wayanad", "Kottayam"));
+        statesAndDistricts.put("Madhya Pradesh", List.of("Bhopal", "Indore", "Gwalior", "Jabalpur", "Ujjain", "Sagar", "Satna", "Dewas", "Rewa", "Chhindwara"));
+        statesAndDistricts.put("Maharashtra", List.of("Mumbai", "Pune", "Nashik", "Nagpur", "Aurangabad", "Thane", "Solapur", "Kolhapur", "Ratnagiri", "Sindhudurg"));
+        statesAndDistricts.put("Manipur", List.of("Imphal", "Churachandpur", "Thoubal", "Senapati", "Ukhrul", "Tamenglong", "Bishnupur", "Chandel"));
+        statesAndDistricts.put("Meghalaya", List.of("Shillong", "Tura", "Jowai", "Williamnagar", "Barddhaman", "Nongstoin", "Mawkyrwat"));
+        statesAndDistricts.put("Mizoram", List.of("Aizawl", "Lunglei", "Champhai", "Serchhip", "Mamit", "Lawngtlai", "Kolasib"));
+        statesAndDistricts.put("Nagaland", List.of("Kohima", "Dimapur", "Mokokchung", "Mon", "Tuensang", "Zunheboto", "Wokha"));
+        statesAndDistricts.put("Odisha", List.of("Bhubaneswar", "Cuttack", "Berhampur", "Rourkela", "Sambalpur", "Balasore", "Puri", "Khurda", "Jagatsinghpur", "Kandhamal"));
+        statesAndDistricts.put("Punjab", List.of("Amritsar", "Ludhiana", "Jalandhar", "Patiala", "Mohali", "Bathinda", "Fatehgarh Sahib", "Mansa"));
+        statesAndDistricts.put("Rajasthan", List.of("Jaipur", "Udaipur", "Jodhpur", "Ajmer", "Bikaner", "Kota", "Sikar", "Churu", "Pali", "Alwar"));
+        statesAndDistricts.put("Sikkim", List.of("Gangtok", "Namchi", "Mangan", "Gyalshing"));
+        statesAndDistricts.put("Tamil Nadu", List.of("Chennai", "Madurai", "Coimbatore", "Tiruchirappalli", "Salem", "Erode", "Tirunelveli", "Vellore", "Kanyakumari", "Dharmapuri"));
+        statesAndDistricts.put("Telangana", List.of("Hyderabad", "Warangal", "Nizamabad", "Khammam", "Karimnagar", "Mahabubnagar", "Rangareddy", "Medchal-Malkajgiri"));
+        statesAndDistricts.put("Tripura", List.of("Agartala", "Ambassa", "Udaipur", "Dharmanagar", "Kailashahar", "Khowai"));
+        statesAndDistricts.put("Uttar Pradesh", List.of("Lucknow", "Agra", "Varanasi", "Kanpur", "Ghaziabad", "Noida", "Meerut", "Aligarh", "Bareilly", "Allahabad"));
+        statesAndDistricts.put("Uttarakhand", List.of("Dehradun", "Haridwar", "Nainital", "Rudraprayag", "Tehri Garhwal", "Pauri Garhwal", "Champawat"));
+        statesAndDistricts.put("West Bengal", List.of("Kolkata", "Darjeeling", "Howrah", "Siliguri", "Asansol", "Bardhaman", "Malda", "Jalpaiguri", "Nadia"));
+
+
+        // Load states into spinner
+        ArrayAdapter<String> stateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new ArrayList<>(statesAndDistricts.keySet()));
+        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerState.setAdapter(stateAdapter);
+
+        // Set listener for state selection changes
+        spinnerState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                String selectedState = (String) spinnerState.getSelectedItem();
+                loadDistricts(selectedState);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Do nothing
+            }
+        });
+    }
+
+    private void loadDistricts(String state) {
+        List<String> districts = statesAndDistricts.get(state);
+        ArrayAdapter<String> districtAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item,
+                districts);
+        districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDistrict.setAdapter(districtAdapter);
+    }
+
+    private class FetchDataTask extends AsyncTask<String, Void, List<Item>> {
         @Override
         protected List<Item> doInBackground(String... params) {
             String state = params[0];
@@ -108,10 +182,12 @@ public class MarketplaceActivity extends AppCompatActivity {
                             if (parser.getName().equals("item")) {
                                 currentItem = new Item();
                             }
+                            break;
 
                         case XmlPullParser.TEXT:
                             text = parser.getText();
                             break;
+
                         case XmlPullParser.END_TAG:
                             if (currentItem != null) {
                                 switch (parser.getName()) {
@@ -182,9 +258,9 @@ public class MarketplaceActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Item> result) {
-            // Set ListView adapter
+            // Set ListView adapter (assuming you have it)
             ItemAdapter adapter = new ItemAdapter(MarketplaceActivity.this, result);
-            listView.setAdapter(adapter);
+            ((ListView) findViewById(R.id.listView)).setAdapter(adapter);
 
             // Plot data on LineChart
             updateLineChart(result);
@@ -203,10 +279,8 @@ public class MarketplaceActivity extends AppCompatActivity {
         // Loop through items and prepare chart data
         for (int i = 0; i < itemList.size(); i++) {
             Item item = itemList.get(i);
-            // Assuming arrival date is in a format that can be plotted as a string label
             arrivalDates.add(item.getArrivalDate());
 
-            // Add Min, Max, and Modal price to corresponding lists
             if (item.getMinPrice() != null) {
                 minPriceEntries.add(new Entry(i, Float.parseFloat(item.getMinPrice())));
             }
@@ -222,11 +296,7 @@ public class MarketplaceActivity extends AppCompatActivity {
         }
 
         // Calculate the mean price
-        if (count > 0) {
-            meanPrice = totalModalPrice / count;
-        } else {
-            meanPrice = 0;
-        }
+        meanPrice = count > 0 ? totalModalPrice / count : 0;
 
         // Set Crop Name and Crop Mean Value TextViews
         tvCropName.setText("Crop Name: " + selectedCommodity);
@@ -265,7 +335,7 @@ public class MarketplaceActivity extends AppCompatActivity {
     }
 
     private void savePrice() {
-        String askingPriceStr = etAskingPrice.getText().toString();
+        String askingPriceStr = ((TextView) findViewById(R.id.etAskingPrice)).getText().toString();
         if (askingPriceStr.isEmpty()) {
             Toast.makeText(this, "Please enter your asking price", Toast.LENGTH_SHORT).show();
             return;
@@ -274,7 +344,7 @@ public class MarketplaceActivity extends AppCompatActivity {
         float askingPrice = Float.parseFloat(askingPriceStr);
         String userId = getIntent().getStringExtra("userid");
 
-        String state = etState.getText().toString().trim();
+        String state = (String) spinnerState.getSelectedItem();
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         DatabaseReference marketplaceRef = database.child("MarketPlace")

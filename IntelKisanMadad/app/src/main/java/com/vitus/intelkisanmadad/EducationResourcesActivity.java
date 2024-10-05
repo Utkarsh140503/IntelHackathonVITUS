@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -26,6 +27,8 @@ public class EducationResourcesActivity extends AppCompatActivity {
 
     private RecyclerView youtubeRecyclerViewEnglish, youtubeRecyclerViewHindi, youtubeRecyclerViewTamil, youtubeRecyclerViewTelugu, webinarRecyclerView;
     private RecyclerView blogRecyclerViewEnglish, blogRecyclerViewHindi, blogRecyclerViewTamil, blogRecyclerViewTelugu;
+
+    private TextView talkToAI;
 
     private List<String> youtubeLinksEnglish = new ArrayList<>();
     private List<String> youtubeLinksHindi = new ArrayList<>();
@@ -63,6 +66,7 @@ public class EducationResourcesActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.parseColor("#F5F5F5"));
         }
         userId = getIntent().getStringExtra("userid");
+        talkToAI = findViewById(R.id.talkToAI);
 
         setupRecyclerViews();
         setupViewMoreButtons();
@@ -78,6 +82,14 @@ public class EducationResourcesActivity extends AppCompatActivity {
         setupBlogAdapter(blogRecyclerViewHindi, blogLinksHindi);
         setupBlogAdapter(blogRecyclerViewTamil, blogLinksTamil);
         setupBlogAdapter(blogRecyclerViewTelugu, blogLinksTelugu);
+
+        talkToAI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(EducationResourcesActivity.this, TalkToAiActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void setupRecyclerViews() {

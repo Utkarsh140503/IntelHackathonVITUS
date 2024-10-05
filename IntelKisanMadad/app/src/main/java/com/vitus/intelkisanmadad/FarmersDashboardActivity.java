@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -19,7 +20,7 @@ public class FarmersDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_farmers_dashboard);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor("#F5F5F5"));
+            getWindow().setStatusBarColor(Color.parseColor("#CBE49B"));
         }
 
         userId = getIntent().getStringExtra("userid");
@@ -32,6 +33,15 @@ public class FarmersDashboardActivity extends AppCompatActivity {
         LinearLayout smartCropRecommender = findViewById(R.id.smartCropRecommender);
         LinearLayout educationResourcesLayout = findViewById(R.id.educationResourcesLayout);
         ImageView bellIcon = findViewById(R.id.bell_icon);
+        ImageView bardIcon = findViewById(R.id.bard_icon);
+
+        bardIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmersDashboardActivity.this, TalkToAiActivity.class);
+                startActivity(i);
+            }
+        });
 
         smartCropRecommender.setOnClickListener(view -> {
             Intent intent = new Intent(FarmersDashboardActivity.this, CropRecommendationActivity.class);

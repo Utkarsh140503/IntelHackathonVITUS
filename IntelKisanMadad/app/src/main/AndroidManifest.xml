@@ -11,7 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntelKisanMadad"
         tools:targetApi="31">
-
+        <activity
+            android:name=".TalkToAiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyerChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyerNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TalkToBuyerActivity"
+            android:exported="false" />
         <activity
             android:name=".CropHealthCheckActivity"
             android:exported="false" />
@@ -63,7 +74,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

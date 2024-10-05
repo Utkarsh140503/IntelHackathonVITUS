@@ -7,17 +7,32 @@
     android:background="#FCF9C1"
     android:padding="20dp">
 
-    <!-- Title Text -->
-    <TextView
-        android:id="@+id/selectAccountTypeText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Account Type"
-        android:textSize="22sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:fontFamily="@font/archivoblack" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/selectAccountTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Account Type"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:fontFamily="@font/archivoblack" />
+
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_info_24"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="Bell Icon" />
+
+    </LinearLayout>
 
     <!-- Description Text -->
     <TextView

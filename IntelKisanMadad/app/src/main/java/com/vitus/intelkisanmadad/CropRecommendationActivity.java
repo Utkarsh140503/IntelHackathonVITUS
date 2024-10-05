@@ -1,5 +1,7 @@
 package com.vitus.intelkisanmadad;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,14 +23,12 @@ import java.nio.channels.FileChannel.MapMode;
 public class CropRecommendationActivity extends AppCompatActivity {
 
     private EditText editTextN, editTextP, editTextK, editTextTemperature, editTextRainfall, editTextPh, editTextHumidity;
-    private TextView textViewResult;
     private Interpreter tflite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crop_recommendation);
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(Color.parseColor("#F5F5F5"));
@@ -41,7 +41,6 @@ public class CropRecommendationActivity extends AppCompatActivity {
         editTextRainfall = findViewById(R.id.editTextRainfall);
         editTextPh = findViewById(R.id.editTextPh);
         editTextHumidity = findViewById(R.id.editTextHumidity);
-        textViewResult = findViewById(R.id.textViewResult);
         Button buttonPredict = findViewById(R.id.buttonPredict);
 
         try {
@@ -76,8 +75,7 @@ public class CropRecommendationActivity extends AppCompatActivity {
                 // Run the model
                 tflite.run(inputValues, outputValues);
 
-//                float maxValue = outputValues[0][0];
-                // Process and display the result
+                // Find the crop with the highest score
                 StringBuilder result = new StringBuilder("Recommended Crop: ");
                 int maxIndex = 0;
                 float maxValue = outputValues[0][0];
@@ -87,20 +85,47 @@ public class CropRecommendationActivity extends AppCompatActivity {
                         maxIndex = i;
                     }
                 }
-
-
                 result.append(crops[maxIndex]);
-//                result.append(outputValues[0][maxValue]);
-                textViewResult.setText(result.toString());
+
+                // Show result in a Dialog box
+                showResultDialog(result.toString());
+
+                // Clear all input fields
+                clearInputFields();
             }
         });
     }
 
     private MappedByteBuffer loadModelFile() throws IOException {
-        FileInputStream fis = new FileInputStream(getAssets().openFd("model.tflite").getFileDescriptor());
+        FileInputStream fis = new FileInputStream(getAssets().openFd("crop_recommendation.tflite").getFileDescriptor());
         FileChannel fileChannel = fis.getChannel();
-        long startOffset = getAssets().openFd("model.tflite").getStartOffset();
-        long declaredLength = getAssets().openFd("model.tflite").getDeclaredLength();
+        long startOffset = getAssets().openFd("crop_recommendation.tflite").getStartOffset();
+        long declaredLength = getAssets().openFd("crop_recommendation.tflite").getDeclaredLength();
         return fileChannel.map(MapMode.READ_ONLY, startOffset, declaredLength);
+    }
+
+    // Method to display the result in a dialog box
+    private void showResultDialog(String result) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(CropRecommendationActivity.this);
+        builder.setTitle("Crop Recommendation");
+        builder.setMessage(result);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    // Method to clear all input fields
+    private void clearInputFields() {
+        editTextN.setText("");
+        editTextP.setText("");
+        editTextK.setText("");
+        editTextTemperature.setText("");
+        editTextRainfall.setText("");
+        editTextPh.setText("");
+        editTextHumidity.setText("");
     }
 }

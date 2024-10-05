@@ -1,5 +1,7 @@
 package com.vitus.intelkisanmadad;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import java.util.List;
 
 public class NegotiationAdapter extends RecyclerView.Adapter<NegotiationAdapter.ViewHolder> {
     private List<Negotiation> negotiationList;
+    private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView buyerNameTextView;
@@ -31,8 +34,9 @@ public class NegotiationAdapter extends RecyclerView.Adapter<NegotiationAdapter.
         }
     }
 
-    public NegotiationAdapter(List<Negotiation> negotiationList) {
+    public NegotiationAdapter(List<Negotiation> negotiationList, Context context) {
         this.negotiationList = negotiationList;
+        this.context = context;
     }
 
     @Override
@@ -52,6 +56,15 @@ public class NegotiationAdapter extends RecyclerView.Adapter<NegotiationAdapter.
         holder.differenceTextView.setText("Difference: " + negotiation.getDifference());
         holder.negotiationPriceTextView.setText("Negotiation Price: " + negotiation.getNegotiationPrice());
         holder.buyerPhoneNumberTextView.setText("Phone: " + negotiation.getBuyerPhoneNumber());  // Set phone number
+
+        // Add click listener to redirect to TalkToBuyerActivity
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, TalkToBuyerActivity.class);
+            intent.putExtra("buyerName", negotiation.getBuyerName());
+            intent.putExtra("commodityName", negotiation.getCommodityName());
+            intent.putExtra("sellerId", ((SellerNotificationActivity) context).getUserId()); // Pass sellerId (userId)
+            context.startActivity(intent);
+        });
     }
 
     @Override

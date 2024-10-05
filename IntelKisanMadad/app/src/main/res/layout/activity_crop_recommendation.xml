@@ -123,17 +123,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="24dp" />
 
-        <TextView
-            android:id="@+id/textViewResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Crop recommendation will appear here"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/lexend"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp" />
+<!--        <TextView-->
+<!--            android:id="@+id/textViewResult"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Crop recommendation will appear here"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:fontFamily="@font/lexend"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="24dp" />-->
 
     </LinearLayout>
 </ScrollView>

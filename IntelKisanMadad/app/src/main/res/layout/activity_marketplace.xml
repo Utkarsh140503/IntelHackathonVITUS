@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ECEF8F"
     tools:context=".MarketplaceActivity">
 
     <LinearLayout
@@ -27,41 +28,29 @@
             android:textColor="#000" />
 
         <!-- State Input -->
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
+            android:id="@+id/spinnerState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="State">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etState"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginLeft="16dp" />
 
         <!-- District Input -->
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
+            android:id="@+id/spinnerDistrict"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
-            android:hint="District">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDistrict"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="16dp" />
 
         <!-- Commodity Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Commodity">

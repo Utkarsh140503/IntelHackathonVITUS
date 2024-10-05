@@ -41,7 +41,7 @@ public class SellerNotificationActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.notificationsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         negotiationList = new ArrayList<>();
-        adapter = new NegotiationAdapter(negotiationList);
+        adapter = new NegotiationAdapter(negotiationList, this);
         recyclerView.setAdapter(adapter);
 
         sellerNameTextView = findViewById(R.id.sellerNameTextView);
@@ -51,6 +51,11 @@ public class SellerNotificationActivity extends AppCompatActivity {
             sellerNameTextView.setText(userId);  // Set the userId in the TextView
             loadNegotiations(userId);
         }
+    }
+
+    // Getter for userId
+    public String getUserId() {
+        return userId;
     }
 
     private void loadNegotiations(String userId) {

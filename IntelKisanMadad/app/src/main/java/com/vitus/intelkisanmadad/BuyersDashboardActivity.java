@@ -1,8 +1,11 @@
 package com.vitus.intelkisanmadad;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +20,7 @@ public class BuyersDashboardActivity extends AppCompatActivity {
     private StatesAdapter statesAdapter;
     private List<State> stateList;
     String userId;
+    private ImageView bell_icon, bardIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +31,29 @@ public class BuyersDashboardActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.parseColor("#F5F5F5"));
         }
 
+        bell_icon = findViewById(R.id.bell_icon);
+        bell_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BuyerNotificationActivity.class);
+                intent.putExtra("buyerId", userId); // Pass the buyer's user ID
+                startActivity(intent);
+            }
+        });
+
         userId = getIntent().getStringExtra("userid");
 
         recyclerView = findViewById(R.id.recycler_view_states);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        bardIcon = findViewById(R.id.bard_icon);
+
+        bardIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(BuyersDashboardActivity.this, TalkToAiActivity.class);
+                startActivity(i);
+            }
+        });
 
         // Example data
         stateList = new ArrayList<>();

@@ -1,51 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_height="match_parent"
-    tools:context=".CropHealthActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edittext_crop_name"
+    <WebView
+        android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Crop Name"/>
+        android:layout_height="match_parent" />
 
-    <EditText
-        android:id="@+id/edittext_n_value"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter N Value"
-        android:inputType="numberDecimal"/>
-
-    <EditText
-        android:id="@+id/edittext_p_value"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter P Value"
-        android:inputType="numberDecimal"/>
-
-    <EditText
-        android:id="@+id/edittext_k_value"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter K Value"
-        android:inputType="numberDecimal"/>
-
-    <Button
-        android:id="@+id/button_predict"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Predict NPK Values"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/textview_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Predicted NPK Values will appear here"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+</RelativeLayout>

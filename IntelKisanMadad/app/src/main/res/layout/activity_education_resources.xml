@@ -11,6 +11,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Talk to AI?"
+            android:layout_margin="10dp"
+            android:id="@+id/talkToAI"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+
         <!-- English YouTube and Blog Section -->
         <LinearLayout
             android:layout_width="match_parent"

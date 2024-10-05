@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="#CBE49B"
     android:orientation="vertical"
     tools:context=".FarmersDashboardActivity">
 
@@ -43,6 +43,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/notificationicon"
+            android:contentDescription="Bell Icon" />
+
+        <ImageView
+            android:id="@+id/bard_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bardicon"
+            android:layout_marginLeft="20dp"
             android:contentDescription="Bell Icon" />
     </LinearLayout>
 
