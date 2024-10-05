@@ -1,6 +1,6 @@
 # KisanMadad
 
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](./app.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](./app-debug.apk)
 
 **Team ID**: A0237  
 **Team Name**: VIT-US
