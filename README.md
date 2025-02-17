@@ -2,6 +2,11 @@
 
 [![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](./app-debug.apk)
 
+**CLICK ON THE LINK ABOVE AND CLICK ON THE SMALL DOWNLOAD ICON ON THE RIGHT CORNER TO DOWNLOAD THE APK FILE**
+
+**KISANMADAD ANDROID APPLICATION WALKTHROUGH VIDEO**  
+[![VIDEO](https://img.youtube.com/vi/rcWM6QxNoHY/0.jpg)](https://youtu.be/rcWM6QxNoHY)
+
 **Team ID**: A0237  
 **Team Name**: VIT-US
 
@@ -15,10 +20,18 @@ KisanMadad is an innovative platform designed to empower farmers by leveraging *
 - **AI-Driven Crop Recommendation**: Provides suggestions based on soil and weather data to help farmers choose the best crops for their land.
 - **Smart Irrigation**: Uses IoT sensors to monitor soil moisture and weather conditions, optimizing water usage.
 - **Crop Health Monitoring**:
-  - **Drone Monitoring**: Detects early crop issues using drones equipped with AI for actionable solutions.
-  - **Crop Health Check**: Evaluates soil suitability based on Nitrogen (N), Phosphorus (P), and Potassium (K) values.
+  - **Crop Disease Prediction**: Utilizes a CNN model trained on a dataset of 5000 images to classify crop diseases such as 'Corn (maize) – Common Rust' and 'Potato – Early Blight'. The model architecture consists of 30 layers, including convolutional layers, batch normalization, ReLU activation, max-pooling layers, and fully connected layers.
+  ![Crop Disease Prediction Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Disease%20Prediction%20Screen.jpg)
+  ![Crop Disease Prediction Model](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/CropDiseaseML.png)
+  
+  - **Crop Health Check**: A CNN model evaluates soil suitability based on Nitrogen (N), Phosphorus (P), and Potassium (K) values, trained on a dataset of 2200 records. 
+  ![Crop Health Check Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Crop%20Health%20Check.jpg)
+  
 - **Smart Nutrient Management**: Provides personalized fertilizer recommendations based on soil conditions.
-- **Educational Resources**: Localized farming tutorials integrated via YouTube, offering farmers access to important knowledge.
+- **Educational Resources**: Localized farming tutorials integrated via YouTube, offering farmers access to important knowledge. Integrated with Bard AI, farmers can clarify their doubts on the go.
+  ![Educational Resources Screen 1](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Educational%20Resources%20screen%201.jpg)
+  ![Educational Resources Screen 2](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Educational%20Resources%20screen%202.jpg)
+  ![Bard AI Integration](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Bard%20AI%20integration.jpg)
 
 ---
 
@@ -98,6 +111,52 @@ The Crop Disease Prediction model is a CNN with 30 layers, consisting of convolu
 
 ---
 
-## Contact
+## Modules Overview
 
-For any queries or contributions, feel free to reach out to our team.
+### 1. Login/Signup Module
+This module allows users to create an account or log in based on their role (farmer or buyer). Users can select their account type and access the platform accordingly.
+
+![Account Type Selection](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Account%20Type%20Selection.jpg)
+![Farmer Signup/ Login](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Farmer%20Signup%20cum%20Login.jpg)
+![Buyer Signup/ Login](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Buyer%20Signup%20cum%20Login.jpg)
+
+### 2. Dashboards
+The dashboards serve as the central hub for both farmers and buyers, providing access to various features of the app.
+
+![Farmer Dashboard](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Farmer%20Dashboard.jpg)
+![Buyer Dashboard](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Buyer%20Dashboard.jpg)
+
+### 3. Crop Recommendation and Health Monitoring
+Farmers can input soil data and receive crop recommendations based on current conditions. Additionally, they can check the health of their crops using the Crop Health Check feature.
+
+![Crop Recommendation Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Crop%20Recommendation.jpg)
+
+### 4. Smart Irrigation and Nutrient Management
+The app provides data-driven irrigation schedules and fertilizer recommendations, ensuring optimized resource use.
+
+![Irrigation Management Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Smart%20Irrigation%20Screen%201.jpg)
+
+### 5. Crop Disease Prediction
+Farmers can upload images of their crops for disease prediction, receiving real-time feedback on crop health.
+
+![Crop Disease Prediction Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Disease%20Prediction%20Screen.jpg)
+
+### 6. Crop Health Check
+Based on the NPK values, provides suggestion for the growth of the crop in the soil.
+
+![Crop Health Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Crop%20Health%20Check.jpg)
+
+### 7. Educational Resources
+Farmers can access educational content, including videos and tutorials, through the app.
+
+![Educational Resources Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Educational%20Resources%20screen%201.jpg)
+![Educational Resources Screen](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Educational%20Resources%20screen%202.jpg)
+
+### Bard AI Integration
+![Bard AI Integration](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Bard%20AI%20integration.jpg)
+
+---
+
+## Conclusion
+
+KisanMadad is a comprehensive solution for modern agriculture, addressing challenges faced by farmers and enabling them to thrive in an increasingly competitive environment. By integrating advanced technologies, KisanMadad not only enhances productivity but also fosters a sustainable future for farming.
