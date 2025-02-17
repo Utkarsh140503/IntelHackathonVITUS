@@ -10,6 +10,10 @@
 **Team ID**: A0237  
 **Team Name**: VIT-US
 
+## Hardware
+
+![Hardware](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad%20Screenshots/Hardware.jpg)
+
 KisanMadad is an innovative platform designed to empower farmers by leveraging **AI**, **IoT**, and **drones**. It provides solutions for direct market access, smart irrigation, crop health monitoring, and educational resources, all with the aim of increasing productivity and profitability for farmers.
 
 ---
