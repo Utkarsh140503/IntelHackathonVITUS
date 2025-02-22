@@ -1,6 +1,6 @@
 # KisanMadad
 
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](https://drive.google.com/file/d/17NRcqzzpAMDnYAaFP5icO8uXvbkT5gcw/view?usp=sharing)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](https://github.com/Utkarsh140503/IntelHackathonVITUS/blob/main/KisanMadad.apk)
 
 **CLICK ON THE LINK ABOVE AND CLICK ON THE SMALL DOWNLOAD ICON ON THE RIGHT CORNER TO DOWNLOAD THE APK FILE**
 
