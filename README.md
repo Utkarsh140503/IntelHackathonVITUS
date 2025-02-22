@@ -1,6 +1,6 @@
 # KisanMadad
 
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](./app-debug.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen)](https://drive.google.com/file/d/17NRcqzzpAMDnYAaFP5icO8uXvbkT5gcw/view?usp=sharing)
 
 **CLICK ON THE LINK ABOVE AND CLICK ON THE SMALL DOWNLOAD ICON ON THE RIGHT CORNER TO DOWNLOAD THE APK FILE**
 
